@@ -18,8 +18,8 @@ module Interaction::ValidationHelpers
   #
   # @api public
   def merge_errors(object)
-    object.errors.each do |attribute, value|
-      errors.add(attribute, value)
+    object.errors.each do |error|
+      errors.add(error.attribute, error.message)
     end
   end
 end
